@@ -3,9 +3,11 @@
 
 Lighter version of [Mirror](https://github.com/vis2k/Mirror) - networking library for Unity.
 
-What is removed:
+What is changed:
 
-- Examples
+- Removed `Examples` folder
 
-- Runtime/Transport/Websocket
+- Removed `Runtime/Transport/Websocket` folder
+
+- Added asmdef file in `Components` folder
 
