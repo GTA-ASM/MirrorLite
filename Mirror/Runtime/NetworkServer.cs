@@ -168,7 +168,7 @@ namespace Mirror
         {
             if (LogFilter.Debug) Debug.Log("Server.SendToObservers id:" + msgType);
 
-            if (identity != null)
+            if (identity != null && identity.observers != null)
             {
                 // pack message into byte[] once
                 byte[] bytes = MessagePacker.PackMessage((ushort)msgType, msg);
@@ -190,7 +190,7 @@ namespace Mirror
         {
             if (LogFilter.Debug) Debug.Log("Server.SendToObservers id:" + typeof(T));
 
-            if (identity != null)
+            if (identity != null && identity.observers != null)
             {
                 // pack message into byte[] once
                 byte[] bytes = MessagePacker.Pack(msg);
@@ -242,7 +242,7 @@ namespace Mirror
         {
             if (LogFilter.Debug) Debug.Log("Server.SendToReady msgType:" + msgType);
 
-            if (identity != null)
+            if (identity != null && identity.observers != null)
             {
                 // pack message into byte[] once
                 byte[] bytes = MessagePacker.PackMessage((ushort)msgType, msg);
@@ -265,7 +265,7 @@ namespace Mirror
         {
             if (LogFilter.Debug) Debug.Log("Server.SendToReady msgType:" + typeof(T));
 
-            if (identity != null)
+            if (identity != null && identity.observers != null)
             {
                 // pack message into byte[] once
                 byte[] bytes = MessagePacker.Pack(msg);
@@ -398,7 +398,7 @@ namespace Mirror
             if (LogFilter.Debug) Debug.Log("Server lost client:" + conn.connectionId);
         }
 
-        static void OnDataReceived(int connectionId, byte[] data)
+        static void OnDataReceived(int connectionId, ArraySegment<byte> data)
         {
             if (connections.TryGetValue(connectionId, out NetworkConnection conn))
             {
@@ -549,7 +549,7 @@ namespace Mirror
             {
                 if (identity.gameObject.activeSelf) //TODO this is different // try with far away ones in ummorpg!
                 {
-                    if (LogFilter.Debug) Debug.Log("Sending spawn message for current server objects name='" + identity.name + "' netId=" + identity.netId);
+                    if (LogFilter.Debug) Debug.Log("Sending spawn message for current server objects name='" + identity.name + "' netId=" + identity.netId + " sceneId=" + identity.sceneId);
 
                     bool visible = identity.OnCheckObserver(conn);
                     if (visible)
