@@ -11,3 +11,5 @@ What is changed:
 
 - Added asmdef file in `Components` folder
 
+- Added network discovery
+
