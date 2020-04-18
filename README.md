@@ -13,3 +13,4 @@ What is changed:
 
 - Added network discovery
 
+- Changed script execution order of transports to higher values
