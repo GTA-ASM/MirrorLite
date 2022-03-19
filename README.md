@@ -1,15 +1,12 @@
 
 # MirrorLite
 
-Lighter version of [Mirror](https://github.com/vis2k/Mirror) - networking library for Unity.
+Lighter version of [Mirror](https://github.com/vis2k/Mirror) v66.0.0 - networking library for Unity.
 
 What is changed:
 
 - Removed `Examples` folder
 
-- Removed `Runtime/Transport/Websocket` folder
+- Removed `Runtime/Transport/SimpleWebTransport` folder
 
-- Added asmdef file in `Components` folder
-
-- Added network discovery
-
+- Removed `ScriptTemplates` folder
