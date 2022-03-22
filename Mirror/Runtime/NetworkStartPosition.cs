@@ -2,9 +2,10 @@ using UnityEngine;
 
 namespace Mirror
 {
+    /// <summary>Start position for player spawning, automatically registers itself in the NetworkManager.</summary>
     [DisallowMultipleComponent]
-    [AddComponentMenu("Network/NetworkStartPosition")]
-    [HelpURL("https://vis2k.github.io/Mirror/Components/NetworkStartPosition")]
+    [AddComponentMenu("Network/Network Start Position")]
+    [HelpURL("https://mirror-networking.gitbook.io/docs/components/network-start-position")]
     public class NetworkStartPosition : MonoBehaviour
     {
         public void Awake()
