@@ -7,10 +7,6 @@ What is changed:
 
 - Removed `Examples` folder
 
-- Removed `Runtime/Transport/Websocket` folder
+- Removed `Runtime/Transports/SimpleWebTransport` folder
 
-- Added asmdef file in `Components` folder
-
-- Added network discovery
-
-- Changed script execution order of transports to higher values
+- Changed script execution order of transport to higher value
